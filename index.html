@@ -1,0 +1,124 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Virtual Gamepad</title>
+      <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="status-bar">
+          <span id="connection-status">Disconnected</span>
+          <button id="settings" class="settings-button">⚙️</button>
+          <button id="customize-controls" class="customize-button">Customize</button>
+        </div>
+        
+        <div class="gamepad">
+          <div class="left-side">
+            <div class="shoulder-buttons-left">
+              <button id="l1" class="shoulder-button l1">L1</button>
+              <button id="l2" class="shoulder-button l2">L2</button>
+            </div>
+            <div class="dpad">
+              <button id="up" class="dpad-button up">↑</button>
+              <button id="left" class="dpad-button left">←</button>
+              <button id="right" class="dpad-button right">→</button>
+              <button id="down" class="dpad-button down">↓</button>
+            </div>
+            <div class="joystick-container">
+              <div id="movement-joystick" class="joystick">
+                <div class="joystick-handle"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-side">
+             <div class="shoulder-buttons-right">
+              <button id="r1" class="shoulder-button r1">R1</button>
+              <button id="r2" class="shoulder-button r2">R2</button>
+            </div>
+            <div class="action-buttons">
+              <button id="y" class="action-button y">Y</button>
+              <button id="x" class="action-button x">X</button>
+              <button id="b" class="action-button b">B</button>
+              <button id="a" class="action-button a">A</button>
+            </div>
+            <div class="joystick-container">
+              <div id="camera-joystick" class="joystick">
+                <div class="joystick-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-buttons">
+          <button id="select" class="menu-button">SELECT</button>
+          <button id="start" class="menu-button">START</button>
+        </div>
+      </div>
+
+      <div id="settings-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Settings</h2>
+          <label for="server-address">Server Address:</label>
+          <input type="text" id="server-address" placeholder="Enter server address">
+
+          <h3>Button Mappings</h3>
+          <div class="button-mapping-container">
+            <div class="mapping-row">
+              <label>L1:</label><input type="text" data-button="L1" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>L2:</label><input type="text" data-button="L2" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>R1:</label><input type="text" data-button="R1" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>R2:</label><input type="text" data-button="R2" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Up:</label><input type="text" data-button="Up" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Left:</label><input type="text" data-button="Left" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Right:</label><input type="text" data-button="Right" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Down:</label><input type="text" data-button="Down" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Y:</label><input type="text" data-button="Y" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>X:</label><input type="text" data-button="X" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>B:</label><input type="text" data-button="B" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>A:</label><input type="text" data-button="A" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Select:</label><input type="text" data-button="Select" class="mapping-input" />
+            </div>
+            <div class="mapping-row">
+              <label>Start:</label><input type="text" data-button="Start" class="mapping-input" />
+            </div>
+          </div>
+
+          <label for="theme-select">Theme:</label>
+          <select id="theme-select">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+
+          <button id="save-settings">Save Settings</button>
+        </div>
+      </div>
+      <script type="module" src="/main.js"></script>
+    </body>
+    </html>

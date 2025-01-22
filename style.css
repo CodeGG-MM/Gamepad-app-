@@ -1,0 +1,215 @@
+:root {
+      --primary-color: #2c3e50;
+      --button-color: #e74c3c;
+      --text-color: #ecf0f1;
+      --dpad-size: 150px;
+      --action-button-size: 50px;
+      --shoulder-button-size: 40px;
+      --joystick-size: 100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      touch-action: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .settings-button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .customize-button {
+      padding: 8px 12px;
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 5px;
+      color: var(--text-color);
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .customize-button:active {
+      transform: scale(0.95);
+      background-color: #c0392b;
+    }
+
+    .gamepad {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .left-side, .right-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .shoulder-buttons-left, .shoulder-buttons-right {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .shoulder-buttons-left {
+      margin-bottom: 10px;
+    }
+
+    .shoulder-buttons-right {
+      margin-bottom: 10px;
+    }
+
+    .dpad {
+      position: relative;
+      width: var(--dpad-size);
+      height: var(--dpad-size);
+      margin-bottom: 10px;
+    }
+
+    .dpad-button {
+      position: absolute;
+      width: calc(var(--dpad-size) / 3);
+      height: calc(var(--dpad-size) / 3);
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 10px;
+      color: var(--text-color);
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dpad-button:active {
+      transform: scale(0.95);
+      background-color: #c0392b;
+    }
+
+    .up { top: 0; left: calc(var(--dpad-size) / 3); }
+    .right { top: calc(var(--dpad-size) / 3); right: 0; }
+    .down { bottom: 0; left: calc(var(--dpad-size) / 3); }
+    .left { top: calc(var(--dpad-size) / 3); left: 0; }
+
+    .action-buttons {
+      position: relative;
+      width: calc(var(--dpad-size) - 20px);
+      height: calc(var(--dpad-size) - 20px);
+      margin-bottom: 10px;
+    }
+
+    .action-button {
+      position: absolute;
+      width: var(--action-button-size);
+      height: var(--action-button-size);
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 50%;
+      color: var(--text-color);
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .action-button:active {
+      transform: scale(0.95);
+      background-color: #c0392b;
+    }
+
+    .y { top: 0; left: calc(50% - var(--action-button-size) / 2); }
+    .x { top: calc(50% - var(--action-button-size) / 2); left: 0; }
+    .b { top: calc(50% - var(--action-button-size) / 2); right: 0; }
+    .a { bottom: 0; left: calc(50% - var(--action-button-size) / 2); }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .menu-button {
+      padding: 8px 16px;
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 5px;
+      color: var(--text-color);
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu-button:active {
+      transform: scale(0.95);
+      background-color: #c0392b;
+    }
+
+    .shoulder-button {
+      padding: 8px 12px;
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 5px;
+      color: var(--text-color);
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .shoulder-button:active {
+      transform: scale(0.95);
+      background-color: #c0392b;
+    }
+
+    .joystick-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .joystick {
+      position: relative;
+      width: var(--joystick-size);
+      height: var(--joystick-size);
+      background-color: #555;
+      border-radius: 50%;
+      touch-action: none;
+    }
+
+    .joystick-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(var(--joystick-size) / 3);
+      height: calc(var(--joystick-size) / 3);
+      background-color: var(--button-color);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
